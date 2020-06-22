@@ -12,5 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');    
+});
+
+Route::prefix('konsumen')->group(function () {
+	Route::get('/', 'KonsumenC@all');
+	Route::get('/edit/{id}', 'KonsumenC@edit');
+	Route::post('/update', 'KonsumenC@update');
+	Route::post('/save', 'KonsumenC@save');
+	Route::get('/delete/{id}', 'KonsumenC@delete');
+});
+
+Route::prefix('transaksi')->group(function () {
+	Route::get('/', 'TransaksiC@all');
+	Route::post('/update', 'TransaksiC@update');
+	Route::get('/delete', 'TransaksiC@delete');
 });
