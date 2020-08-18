@@ -19,18 +19,10 @@ class CreateTransaksisTable extends Migration
             $table->foreign('konsumen_id')->references('id')->on('konsumens')->onDelete('cascade');
             $table->string('no_polisi');
             $table->string('waktu_masuk');
-            $table->string('waktu_keluar');
-            $table->string('biaya');
+            $table->string('waktu_keluar')->nullable();
+            $table->string('biaya')->nullable();
             $table->timestamps();
         });
-
-        DB::table('transaksis')->insert([
-            'konsumen_id' => 1,
-            'no_polisi' => "B 1209 UHY  ",
-            'waktu_masuk' => "08:15",
-            'waktu_keluar' => "09:15",
-            'biaya' => "1500"
-        ]);
     }
 
     /**

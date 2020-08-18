@@ -25,6 +25,8 @@ Route::prefix('konsumen')->group(function () {
 
 Route::prefix('transaksi')->group(function () {
 	Route::get('/', 'TransaksiC@all');
+	Route::get('/edit/{id}', 'TransaksiC@edit');
 	Route::post('/update', 'TransaksiC@update');
-	Route::get('/delete', 'TransaksiC@delete');
+	Route::post('/save', 'TransaksiC@save');
+	Route::get('/delete/{id}', 'TransaksiC@delete');
 });

@@ -32,7 +32,7 @@
 							<div class="col">
 								<label class="col-form-label">Tanggal Transaksi:</label>
 								<div class="input-group date" data-provide="datepicker">
-									<input type="text" name="add_tgl_transaksi" class="form-control" autocomplete="off">
+									<input type="text" name="add_tgl_transaksi" class="form-control" autocomplete="off" readonly value="{{date('d-m-Y')}}">
 									<div class="input-group-addon">
 										<span class="glyphicon glyphicon-th"></span>
 									</div>
@@ -76,8 +76,8 @@
 			<td>{{$k->Konsumen->konsumen}}</td>
 			<td>{{$k->no_polisi}}</td>
 			<td>{{$k->waktu_masuk}}</td>
-			<td>{{$k->waktu_keluar}}</td>
-			<td>{{$k->biaya}}</td>
+			<td>{{($k->waktu_keluar == '' ? 'Belum Keluar' : date_format(date_create($k->waktu_keluar), "d-m-Y H:i:s"))}}</td>
+			<td>{{($k->biaya == '' ? '-' : $k->biaya)}}</td>
 			<td>
 				<a href="{{url('transaksi/edit', $k->id)}}">
 					Edit

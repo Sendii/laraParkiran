@@ -25,12 +25,22 @@ class CreateKonsumensTable extends Migration
         });
 
         DB::table('konsumens')->insert([
-            'konsumen' => "Sendi",
-            'jenis_kendaraan' => "Mobil",
-            'no_polisi' => "B 1209 UHY",
-            'tgl_lahir' => "18 Des 1990",
-            'jenis_kelamin' => "L",
-            'no_hp' => "0888888"
+            [
+                'konsumen' => "Sendi",
+                'jenis_kendaraan' => "Mobil",
+                'no_polisi' => "B 1209 MOB",
+                'tgl_lahir' => "18 Des 1990",
+                'jenis_kelamin' => "L",
+                'no_hp' => "0888888"
+            ],
+            [
+                'konsumen' => "Bariw",
+                'jenis_kendaraan' => "Motor",
+                'no_polisi' => "B 1209 MOT",
+                'tgl_lahir' => "18 Des 1990",
+                'jenis_kelamin' => "L",
+                'no_hp' => "0888888"
+            ]
         ]);
     }
 
